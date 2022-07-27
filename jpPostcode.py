@@ -123,9 +123,7 @@ def read_updateat():
 def is_updatable():
     update_at = read_updateat()
     today = datetime.date.today()
-    if today.month != update_at.month:
-        return True
-    elif today - update_at > datetime.timedelta(days=32):
+    if today.month != update_at.month or today.year != update_at.year:
         return True
     elif not os.path.exists("jpPostcode.db"):
         return True

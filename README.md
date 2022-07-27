@@ -16,3 +16,5 @@ $ python3 jpPostcode.py 1000005
 CC0
 
 商用利用、個人利用、改変、二次配布、全てにおいてフリーです。何の制限もありません。自由に使ってください。
+
+[![CC0](http://i.creativecommons.org/p/zero/1.0/88x31.png "CC0")](http://creativecommons.org/publicdomain/zero/1.0/deed.ja)

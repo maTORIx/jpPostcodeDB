@@ -18,6 +18,30 @@ DBが存在しなかった場合は、自動でDBを作成します。ネット�
 
 強制的に更新したい場合は、`jpPostcode.db`を削除すれば自動的に一から生成されます。
 
+## DBを単体で利用したい場合
+
+sqlite3を利用したDBの中身は、下記のような構造になっています。
+
+```
+postcodes(
+    id integer PRIMARY KEY AUTOINCREMENT,
+    postcode integer NOT NULL,
+    prefecture text NOT NULL,
+    prefecture_kana text NOT NULL,
+    municipalities text NOT NULL,
+    municipalities_kana text NOT NULL,
+    town_area text NOT NULL,
+    town_area_kana text NOT NULL,
+    unique(postcode, prefecture, municipalities, town_area)
+);
+```
+
+利用する際は、下記のようなコードで検索できます。なお、SQLを利用するだけではDBの更新は行われません。
+
+```
+SELECT * FROM postcodes where postcode = 1000005;
+```
+
 ## LICENCE
 CC0
 
